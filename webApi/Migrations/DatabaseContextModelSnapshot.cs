@@ -39,62 +39,32 @@ namespace webApi.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Product1",
-                            Price = 10.0m
+                            Name = "Teclado",
+                            Price = 12.99m
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Product2",
-                            Price = 20.0m
+                            Name = "Parlantes",
+                            Price = 20.25m
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Product3",
-                            Price = 30.0m
+                            Name = "Monitor",
+                            Price = 30.30m
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Product4",
-                            Price = 40.0m
+                            Name = "USB",
+                            Price = 40.25m
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Product5",
-                            Price = 50.0m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Product6",
-                            Price = 60.0m
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Product7",
-                            Price = 70.0m
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Product8",
-                            Price = 80.0m
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Product9",
-                            Price = 90.0m
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "Product10",
-                            Price = 100.0m
+                            Name = "Laptop",
+                            Price = 155.75m
                         });
                 });
 #pragma warning restore 612, 618

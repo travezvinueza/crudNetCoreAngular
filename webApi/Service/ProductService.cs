@@ -34,6 +34,11 @@ namespace webApi.Service
 
         public async Task<ProductDto> GetByIdAsync(int id)
         {
+            var existingProduct = await _repository.GetByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new NotFoundException($"El producto con id '{id}' no existe.");
+            }
             var producto = await _repository.GetByIdAsync(id);
             return _mapper.fromEntity(producto!);
         }
@@ -46,12 +51,17 @@ namespace webApi.Service
                 throw new ConflictException($"El producto con nombre '{dto.Name}' ya existe.");
             }
             Product entity = _mapper.fromDto(dto);
-            await _repository.CreateAsync(entity);
-            return _mapper.fromEntity(entity);
+            var savedProduct = await _repository.CreateAsync(entity);
+            return _mapper.fromEntity(savedProduct!);
         }
 
         public async Task<ProductDto> UpdateAsync(int id, ProductDto dto)
         {
+            var existingProduct = await _repository.GetByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new NotFoundException($"El producto con id '{id}' no existe.");
+            }
             Product entity = _mapper.fromDto(dto);
             entity.Id = id;
             await _repository.UpdateAsync(entity);
@@ -60,6 +70,11 @@ namespace webApi.Service
 
         public async Task<bool> DeleteAsync(int id)
         {
+            var existingProduct = await _repository.GetByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new NotFoundException($"El producto con id '{id}' no existe.");
+            }
             await _repository.DeleteAsync(id);
             return true;
         }

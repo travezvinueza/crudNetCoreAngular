@@ -36,30 +36,24 @@ namespace webApi.Migrations
                 columns: new[] { "Id", "Name", "Price" },
                 values: new object[,]
                 {
-                    { 1, "Product1", 10.0m },
-                    { 2, "Product2", 20.0m },
-                    { 3, "Product3", 30.0m },
-                    { 4, "Product4", 40.0m },
-                    { 5, "Product5", 50.0m },
-                    { 6, "Product6", 60.0m },
-                    { 7, "Product7", 70.0m },
-                    { 8, "Product8", 80.0m },
-                    { 9, "Product9", 90.0m },
-                    { 10, "Product10", 100.0m }
+                    { 1, "Teclado", 12.99m },
+                    { 2, "Parlantes", 20.25m },
+                    { 3, "Monitor", 30.30m },
+                    { 4, "USB", 40.25m },
+                    { 5, "Laptop", 155.75m }
                 });
 
             migrationBuilder.Sql(@"
-                     CREATE PROCEDURE AgregarProducto(
-                         IN p_Name VARCHAR(255),
-                         IN p_Price DECIMAL(18,2),
-                         OUT p_Id INT
-                     )
-                     BEGIN
-                         INSERT INTO Products (Name, Price)
-                         VALUES (p_Name, p_Price);
-                         SET p_Id = LAST_INSERT_ID();
-                     END;
-                     ");
+                CREATE PROCEDURE AgregarProducto(
+                    IN p_Name VARCHAR(255),
+                    IN p_Price DECIMAL(18,2)
+                )
+                BEGIN
+                    INSERT INTO Products (Name, Price)
+                    VALUES (p_Name, p_Price);
+                    SELECT Id, Name, Price FROM Products WHERE Id = LAST_INSERT_ID();
+                    END;
+                ");
 
             migrationBuilder.Sql(@"
                 CREATE PROCEDURE ListarProductos()
@@ -69,29 +63,28 @@ namespace webApi.Migrations
                 ");
 
             migrationBuilder.Sql(@"
-    CREATE PROCEDURE ActualizarProducto(
-        IN p_Id INT,
-        IN p_Name VARCHAR(255),
-        IN p_Price DECIMAL(18,2)
-    )
-    BEGIN
-        UPDATE Products
-        SET Name = p_Name,
-            Price = p_Price
-        WHERE Id = p_Id;
-    END;
-    ");
+                CREATE PROCEDURE ActualizarProducto(
+                    IN p_Id INT,
+                    IN p_Name VARCHAR(255),
+                    IN p_Price DECIMAL(18,2)
+                )
+                BEGIN
+                    UPDATE Products
+                    SET Name = p_Name,
+                    Price = p_Price
+                    WHERE Id = p_Id;
+                END;
+                ");
 
             migrationBuilder.Sql(@"
-    CREATE PROCEDURE EliminarProducto(
-        IN p_Id INT
-    )
-    BEGIN
-        DELETE FROM Products
-        WHERE Id = p_Id;
-    END;
-    ");
-    
+                CREATE PROCEDURE EliminarProducto(
+                    IN p_Id INT
+                )
+                BEGIN
+                    DELETE FROM Products
+                    WHERE Id = p_Id;
+                END;
+                ");
         }
 
         /// <inheritdoc />

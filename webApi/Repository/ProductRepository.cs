@@ -6,10 +6,10 @@ namespace webApi.Repository
 {
     public interface IProductRepository
     {
-         Task<IEnumerable<Product>> GetAllAsync();
+        Task<IEnumerable<Product>> GetAllAsync();
         Task<Product?> GetByIdAsync(int id);
-        Task CreateAsync(Product product);
-        Task UpdateAsync(Product product);
+        Task<Product?> CreateAsync(Product product);
+        Task<Product?> UpdateAsync(Product product);
         Task DeleteAsync(int id);
         Task<Product?> GetByNameAsync(string name);
     }
@@ -35,16 +35,19 @@ namespace webApi.Repository
             return await _context.Products.FindAsync(id);
         }
 
-        public async Task CreateAsync(Product product)
+        public async Task<Product?> CreateAsync(Product product)
         {
-            await _context.Database.ExecuteSqlRawAsync(
-                "CALL AgregarProducto({0}, {1})", product.Name, product.Price);
+            var result = await _context.Products
+                .FromSqlRaw("CALL AgregarProducto({0}, {1})", product.Name, product.Price)
+                .ToListAsync();
+            return result.FirstOrDefault();
         }
 
-        public async Task UpdateAsync(Product product)
+        public async Task<Product?> UpdateAsync(Product product)
         {
             await _context.Database.ExecuteSqlRawAsync(
                 "CALL ActualizarProducto({0}, {1}, {2})", product.Id, product.Name, product.Price);
+            return await _context.Products.FindAsync(product.Id);
         }
 
         public async Task DeleteAsync(int id)
