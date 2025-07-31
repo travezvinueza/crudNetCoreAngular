@@ -1,6 +1,6 @@
 
  <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModalProduct">
-        <i class="fa fa-plus"></i> Add Product
+        <i class="fa fa-plus"></i> Agregar Producto
     </button>
 
 @if (isLoading()) {
@@ -15,7 +15,8 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>NombrePrudcuto</th>
+        <th>ID</th>
+        <th>Pruducto</th>
         <th>Precio</th>
         <th>Actions</th>
       </tr>
@@ -23,6 +24,7 @@
     <tbody>
       @for (product of products(); track product.id) {
         <tr>
+          <td>{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
           <td>
@@ -53,12 +55,12 @@
                 <form [formGroup]="productDetail">
                     <div class="mb-3">
                         <input type="text" formControlName="name" class="form-control" id="name"
-                            placeholder="product name" required>
+                            placeholder="Nombre del producto" required>
                     </div>
 
                     <div class="mb-3">
                         <input type="number" formControlName="price" class="form-control" id="price"
-                            placeholder="product price" required>
+                            placeholder="Precio" required>
                     </div>
 
                     <br>

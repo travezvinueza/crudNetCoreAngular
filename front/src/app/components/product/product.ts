@@ -17,7 +17,6 @@ export class Product implements OnInit {
   readonly productService = inject(ProductService);
   readonly formBuilder = inject(FormBuilder);
 
-
   ngOnInit(): void {
     this.productDetail = this.formBuilder.group({
       id: [0],
@@ -31,27 +30,17 @@ export class Product implements OnInit {
   status = this.productService.productStatus;
   errorMessage = this.productService.productError;
 
-
-newProduct() {
-  const { name, price } = this.productDetail.value;
-
-  if (!name || !price) {
-    return;
+  newProduct() {
+    const { name, price } = this.productDetail.value;
+    if (!name || !price) {
+      return;
+    }
+    this.productService.productInput.set({ name, price });
+    this.productDetail.reset();
   }
-
-   console.log({ name, price }); 
-
-  this.productService.productInput.set({ name, price }); 
-  this.productDetail.reset();
-}
-
-  
- 
 
   deleteProduct(id: number) {
     this.productService.productInput.set({ id })
   }
 
 }
-
-
