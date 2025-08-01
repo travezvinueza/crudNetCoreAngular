@@ -151,3 +151,15 @@ C:\Users\RT\Desktop\angular\webApi\obj\Debug\net9.0\webApi.pdb
 C:\Users\RT\Desktop\angular\webApi\obj\Debug\net9.0\webApi.genruntimeconfig.cache
 C:\Users\RT\Desktop\angular\webApi\obj\Debug\net9.0\ref\webApi.dll
 C:\Users\RT\Desktop\angular\webApi\obj\Debug\net9.0\webApi.sourcelink.json
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Microsoft.ApplicationInsights.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.AspNetCore.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Expressions.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Sinks.ApplicationInsights.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+C:\Users\RT\Desktop\angular\webApi\bin\Debug\net9.0\Serilog.Sinks.File.dll

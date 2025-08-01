@@ -9,15 +9,18 @@ namespace webApi.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, ILogger<ProductController> logger)
         {
+            _logger = logger;
             _productService = productService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            _logger.LogInformation("🧪 Consultando todos los productos");
             var products = await _productService.GetAllAsync();
             return Ok(products);
         }
@@ -25,6 +28,7 @@ namespace webApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            _logger.LogInformation("🧪 Consultando producto con id: {ProductId}", id);
             var product = await _productService.GetByIdAsync(id);
             if (product == null) return NotFound();
             return Ok(product);
@@ -36,8 +40,10 @@ namespace webApi.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            _logger.LogInformation("🧪 Creando un nuevo producto");
             var createdProduct = await _productService.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = createdProduct.Id }, createdProduct);
+
         }
 
         [HttpPut("{id}")]
