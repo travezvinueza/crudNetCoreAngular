@@ -1,0 +1,11 @@
+C:\Users\RT\Desktop\test\src\webApi.Domain\bin\Debug\net9.0\webApi.Domain.deps.json
+C:\Users\RT\Desktop\test\src\webApi.Domain\bin\Debug\net9.0\webApi.Domain.dll
+C:\Users\RT\Desktop\test\src\webApi.Domain\bin\Debug\net9.0\webApi.Domain.pdb
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.AssemblyInfoInputs.cache
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.AssemblyInfo.cs
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.dll
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\refint\webApi.Domain.dll
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\webApi.Domain.pdb
+C:\Users\RT\Desktop\test\src\webApi.Domain\obj\Debug\net9.0\ref\webApi.Domain.dll
