@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uJpRqLsADyo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\RT\\Desktop\\angular\\back\\webApi.Application\\webApi.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RT\\.nuget\\packages\\riok.mapperly\\4.2.1\\riok.mapperly.4.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
