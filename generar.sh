@@ -2,7 +2,7 @@
 
 # Nombre del proyecto base
 solutionName="webApi"
-srcDir="src"
+srcDir="back"
 testDir="test"
 
 echo "📁 Creando estructura de carpetas..."

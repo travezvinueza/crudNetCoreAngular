@@ -4,7 +4,7 @@ using Serilog.Templates;
 using webApi.Application.Interfaces;
 using webApi.Application.Mappings;
 using webApi.Application.Services;
-using webApi.Data;
+using webApi.Infrastructure.Data;
 using webApi.Domain.Interfaces;
 using webApi.Infrastructure.Repositories;
 
