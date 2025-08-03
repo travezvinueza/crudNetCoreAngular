@@ -1,8 +1,8 @@
 import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
 import { catchError, of, tap, throwError } from 'rxjs';
+import { cache } from '../shared/http-cache';
 
-const cache = new Map<string, { expiresAt: number, resp: HttpResponse<unknown> }>();
-const TTL = 20 * 60 * 1000; // 20 minutes tiempo de vida de la caché
+const TTL = 10 * 60 * 1000; // 10 minutes tiempo de vida de la caché
 
 export const cacheInterceptor: HttpInterceptorFn = (req, next) => {
 
@@ -16,11 +16,12 @@ export const cacheInterceptor: HttpInterceptorFn = (req, next) => {
       acc[key] = req.headers.get(key);
       return acc;
     }, {} as Record<string, string | null>),
+    body: req.body
   });
 
   const cachedResponse = cache.get(cacheKey);
   if (cachedResponse && cachedResponse.expiresAt > Date.now()) {
-    return of(cachedResponse.resp.clone());
+    return of(cachedResponse.resp);
   } else if (cachedResponse) {
     cache.delete(cacheKey);
   }
@@ -30,7 +31,7 @@ export const cacheInterceptor: HttpInterceptorFn = (req, next) => {
       if (event instanceof HttpResponse) {
         cache.set(cacheKey, {
           expiresAt: Date.now() + TTL,
-          resp: event.clone()
+          resp: event
         });
       }
     }),

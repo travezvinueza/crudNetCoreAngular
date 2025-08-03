@@ -3,6 +3,7 @@ import { computed, Injectable, signal } from '@angular/core';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 import { debounceTime } from 'rxjs';
 import { z as zod } from 'zod';
+import { invalidateCacheByUrlFragment } from '../shared/http-cache';
 
 const SingleProductSchema = zod.object({
   id: zod.number(),
@@ -73,6 +74,7 @@ export class ProductService {
     {
       parse: (data) => {
         const parsedData = SingleProductSchema.parse(data);
+        invalidateCacheByUrlFragment('/api/Product');
         this.productResource.update((products) => {
           if (!products) return products;
           return [parsedData, ...products];
@@ -99,6 +101,7 @@ export class ProductService {
     {
       parse: () => {
         const input = this.productInput();
+        invalidateCacheByUrlFragment('/api/Product');
         if (input?.id != null) {
           this.productResource.update((products) => {
             if (!products) return products;
