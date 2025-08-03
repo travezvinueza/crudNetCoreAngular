@@ -18,10 +18,10 @@ namespace webApi.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] string? nombre = "", [FromQuery] int page = 1, [FromQuery] int size = 10)
         {
-            _logger.LogInformation("🧪 Consultando todos los productos");
-            var products = await _productService.GetAllAsync();
+            _logger.LogInformation("🧪 Consultando productos paginados");
+            var products = await _productService.GetPagedAsync(nombre, page, size);
             return Ok(products);
         }
 

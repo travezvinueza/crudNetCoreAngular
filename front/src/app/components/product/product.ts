@@ -29,6 +29,8 @@ export class Product implements OnInit {
   isLoading = this.productService.productLoading;
   status = this.productService.productStatus;
   errorMessage = this.productService.productError;
+  page = this.productService.page;
+  query = this.productService.query;
 
   newProduct() {
     const { name, price } = this.productDetail.value;
@@ -37,6 +39,18 @@ export class Product implements OnInit {
     }
     this.productService.productInput.set({ name, price });
     this.productDetail.reset();
+  }
+
+  // Método para actualizar la query (nombre)
+  onSearch(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.query.set(input.value);
+    this.page.set(1);
+  }
+
+  changePage(event: Event) {
+    const select = event.target as HTMLSelectElement;
+    this.page.set(Number(select.value));
   }
 
   deleteProduct(id: number) {

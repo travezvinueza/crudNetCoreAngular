@@ -4,7 +4,7 @@ namespace webApi.Domain.Interfaces
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> GetAllAsync();
+        Task<IEnumerable<Product>> GetAllAsync(string? nombre = "", int page = 1, int size = 10);
         Task<Product?> GetByIdAsync(int id);
         Task DeleteAsync(int id);
         Task<Product?> AddAsync(Product product);

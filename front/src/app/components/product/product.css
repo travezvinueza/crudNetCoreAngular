@@ -1,0 +1,85 @@
+/* Estilos para el campo de búsqueda */
+fieldset.search-box {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilos para el contenedor del selector de página */
+.container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container label {
+  font-weight: bold;
+}
+
+.container select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilos para el mensaje de carga */
+.loading {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: #007bff;
+}
+
+/* Estilos para el mensaje de error */
+.error {
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+/* Estilos para la lista de permisos */
+.permissions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.permissions-list li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+}
+
+.permissions-list li:last-child {
+  border-bottom: none;
+}
+
+.permissions-list li.no-data {
+  text-align: center;
+  color: #f17a19;
+  font-style: italic;
+}
+
+/* Estilos para el hover de los elementos de la lista */
+.permissions-list li:hover {
+  background-color: #f8f9fa;
+}

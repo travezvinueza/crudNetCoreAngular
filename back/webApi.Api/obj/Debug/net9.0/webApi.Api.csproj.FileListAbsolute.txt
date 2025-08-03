@@ -339,3 +339,6 @@ C:\Users\RT\Desktop\angular\back\webApi.Api\obj\Debug\net9.0\staticwebassets.pac
 C:\Users\RT\Desktop\angular\back\webApi.Api\obj\Debug\net9.0\webApi.Api.csproj.Up2Date
 C:\Users\RT\Desktop\angular\back\webApi.Api\obj\Debug\net9.0\webApi.Api.genruntimeconfig.cache
 C:\Users\RT\Desktop\angular\back\webApi.Api\obj\Debug\net9.0\ref\webApi.Api.dll
+C:\Users\RT\Desktop\angular\back\webApi.Api\bin\Debug\net9.0\FluentValidation.dll
+C:\Users\RT\Desktop\angular\back\webApi.Api\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+C:\Users\RT\Desktop\angular\back\webApi.Api\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll

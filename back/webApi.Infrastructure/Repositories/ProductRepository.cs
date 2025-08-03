@@ -27,10 +27,10 @@ namespace webApi.Infrastructure.Repositories
             await _context.Database.ExecuteSqlRawAsync("CALL EliminarProducto({0})", id);
         }
 
-        public async Task<IEnumerable<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync(string? nombre = "", int page = 1, int size = 10)
         {
             return await _context.Products
-                .FromSqlRaw("CALL ListarProductos()")
+                .FromSqlRaw("CALL ListarProductos({0}, {1}, {2})", nombre ?? "", page, size)
                 .ToListAsync();
         }
 

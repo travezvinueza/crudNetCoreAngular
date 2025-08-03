@@ -4,7 +4,7 @@ namespace webApi.Application.Interfaces
 {
     public interface IProductService
     {
-        Task<IEnumerable<ProductDto>> GetAllAsync();
+        Task<IEnumerable<ProductDto>> GetPagedAsync(string? nombre = "", int page = 1, int size = 10);
         Task<ProductDto> GetByIdAsync(int id);
         Task<ProductDto> AddAsync(ProductDto dto);
         Task<ProductDto> UpdateAsync(int id, ProductDto dto);

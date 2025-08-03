@@ -18,9 +18,9 @@ namespace webApi.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ProductDto>> GetAllAsync()
+        public async Task<IEnumerable<ProductDto>> GetPagedAsync(string? nombre = "", int page = 1, int size = 10)
         {
-            var productos = await _repository.GetAllAsync();
+            var productos = await _repository.GetAllAsync( nombre, page, size);
             return productos.Select(_mapper.fromEntity).ToList();
         }
 

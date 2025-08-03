@@ -1,5 +1,7 @@
 import { HttpErrorResponse, httpResource } from '@angular/common/http';
 import { computed, Injectable, signal } from '@angular/core';
+import { toSignal, toObservable } from '@angular/core/rxjs-interop';
+import { debounceTime } from 'rxjs';
 import { z as zod } from 'zod';
 
 const SingleProductSchema = zod.object({
@@ -17,14 +19,28 @@ export type ProductResponse = zod.infer<typeof ProductArraySchema>;
   providedIn: 'root'
 })
 export class ProductService {
-  private readonly apiUrl = 'http://localhost:5255/api/Product';
+  private readonly apiUrl = 'http://localhost:5034/api/Product';
 
   productInput = signal<Partial<Product> | null>(null);
+
+  query = signal('');
+  debouncedQuery = toSignal(
+    toObservable(this.query).pipe(debounceTime(600)),
+    { initialValue: '' }
+  );
+
+  page = signal(1);
+  size = signal(10);
 
   productResource = httpResource(() => {
     return {
       url: this.apiUrl,
       method: 'GET',
+      params: {
+        nombre: this.debouncedQuery(),
+        page: this.page(),
+        size: this.size(),
+      }
     };
   },
     {

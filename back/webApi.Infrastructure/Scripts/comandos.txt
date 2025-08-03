@@ -1,0 +1,6 @@
+Ingresar a webApi.Api y ejecutar el siguiente comando para
+migrar los procedimientos almacenados a la base de datos.
+
+dotnet ef database update \
+  --project webApi.Infrastructure \
+  --startup-project webApi.Api
