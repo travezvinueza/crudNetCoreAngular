@@ -8,7 +8,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace webApi.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class AddStoredProcedures : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -40,7 +40,18 @@ namespace webApi.Infrastructure.Migrations
                     { 2, "Parlantes", 20.25m },
                     { 3, "Monitor", 30.30m },
                     { 4, "USB", 40.25m },
-                    { 5, "Laptop", 155.75m }
+                    { 5, "Laptop", 155.75m },
+                    { 6, "Mouse", 10.50m },
+                    { 7, "Impresora", 99.99m },
+                    { 8, "Webcam", 25.55m },
+                    { 9, "Router", 45.77m },
+                    { 10, "Cargador", 15.88m },
+                    { 11, "Pendrive", 8.99m },
+                    { 12, "Disco Duro", 99.33m },
+                    { 13, "Tarjeta de Video", 250.75m },
+                    { 14, "Tarjeta Madre", 150.25m },
+                    { 15, "Fuente de Poder", 75.95m },
+                    { 16, "Memoria RAM", 60.99m }
                 });
 
             migrationBuilder.Sql(@"
@@ -104,6 +115,7 @@ namespace webApi.Infrastructure.Migrations
                     WHERE Id = p_Id;
                 END;
                 ");
+                
         }
 
         /// <inheritdoc />

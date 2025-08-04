@@ -1,6 +1,14 @@
-Ingresar a webApi.Api y ejecutar el siguiente comando para
+Desde la raiz ejecutar el siguiente comando para
 migrar los procedimientos almacenados a la base de datos.
+Despues ingresar a webApi.Api y ejecutar dotnet run
+
+dotnet ef migrations add InitialCreate \
+  --project webApi.Infrastructure \
+  --startup-project webApi.Api
+
+  
 
 dotnet ef database update \
   --project webApi.Infrastructure \
   --startup-project webApi.Api
+

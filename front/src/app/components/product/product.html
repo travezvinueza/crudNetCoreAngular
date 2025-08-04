@@ -5,88 +5,124 @@
 <div class="container">
   <label for="page-select">Página:</label>
   <select (change)="changePage($event)">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-      </select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
 </div>
 
- <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModalProduct">
-        <i class="fa fa-plus"></i> Agregar Producto
-    </button>
+<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModalProduct">
+  <i class="fa fa-plus"></i> Agregar Producto
+</button>
 
 @if (isLoading()) {
-  <div class="loading">
-    Cargando...
-  </div>
+<div class="loading">
+  Cargando...
+</div>
 } @else if (errorMessage()) {
-  <div class="error">
-    Error al cargar los productos: {{ errorMessage().error.message }} {{errorMessage().status}} {{errorMessage().message}}
-  </div>
+<div class="error">
+  Error al cargar los productos: {{ errorMessage().error.message }} {{errorMessage().status}} {{errorMessage().message}}
+</div>
 } @else {
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Pruducto</th>
-        <th>Precio</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (product of products(); track product.id) {
-        <tr>
-          <td>{{ product.id }}</td>
-          <td>{{ product.name }}</td>
-          <td>{{ product.price }}</td>
-          <td>
-            <button class="btn btn-dark btn-sm" (click)="deleteProduct(product.id)">
-              ❌ Delete
-            </button>
-          </td>
-        </tr>
-      } @empty {
-        <tr>
-          <td class="text-center">No se encontraron permisos.</td>
-        </tr>
-      }
-    </tbody>
-  </table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pruducto</th>
+      <th>Precio</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (product of products(); track product.id) {
+    <tr>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button class="btn btn-dark btn-sm" (click)="deleteProduct(product.id)">
+          ❌ Delete
+        </button>
+        <!-- <button class="btn btn-info btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#editModalProduct"
+          (click)="editProduct(product.id)">
+          📝 Edit
+        </button> -->
+      </td>
+    </tr>
+    } @empty {
+    <tr>
+      <td class="text-center">No se encontraron permisos.</td>
+    </tr>
+    }
+  </tbody>
+</table>
 }
 
 
 <div class="modal fade" id="addModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog draggable modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-info text-center">
-                <h4 class="modal-title w-100 text-white" id="exampleModalLabel">Add Product</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+  <div class="modal-dialog draggable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-center">
+        <h4 class="modal-title w-100 text-white" id="exampleModalLabel">Add Product</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productDetail">
+          <div class="mb-3">
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nombre del producto"
+              required>
+          </div>
 
-                <form [formGroup]="productDetail">
-                    <div class="mb-3">
-                        <input type="text" formControlName="name" class="form-control" id="name"
-                            placeholder="Nombre del producto" required>
-                    </div>
+          <div class="mb-3">
+            <input type="number" formControlName="price" class="form-control" id="price" placeholder="Precio" required>
+          </div>
 
-                    <div class="mb-3">
-                        <input type="number" formControlName="price" class="form-control" id="price"
-                            placeholder="Precio" required>
-                    </div>
-
-                    <br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"> <i
-                                class="fa fa-times-circle"></i>Cancelar</button>
-                        <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal"
-                            (click)="newProduct()"><i class="fa fa-save"></i>Agregar </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"> <i
+                class="fa fa-times-circle"></i>Cancelar</button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal" (click)="saveProduct()"><i
+                class="fa fa-save"></i>Agregar </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
+
+
+<!-- <div class="modal fade" id="editModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog draggable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-center">
+        <h4 class="modal-title w-100 text-white" id="exampleModalLabel">Edit Product</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="productDetail">
+          <input type="hidden" formControlName="id" class="form-control" id="id">
+          <div class="mb-3">
+            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nombre del producto"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <input type="number" formControlName="price" class="form-control" id="price" placeholder="Precio" required>
+          </div>
+
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"> <i
+                class="fa fa-times-circle"></i>Cancelar</button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal" (click)="saveProduct()"><i
+                class="fa fa-save"></i>Actualizar </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->

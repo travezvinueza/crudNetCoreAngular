@@ -1,9 +1,10 @@
-import { HttpErrorResponse, httpResource } from '@angular/common/http';
-import { computed, Injectable, signal } from '@angular/core';
+import { httpResource } from '@angular/common/http';
+import { Injectable, signal } from '@angular/core';
 import { toSignal, toObservable } from '@angular/core/rxjs-interop';
 import { debounceTime } from 'rxjs';
 import { z as zod } from 'zod';
 import { invalidateCacheByUrlFragment } from '../shared/http-cache';
+import { toast } from 'ngx-sonner';
 
 const SingleProductSchema = zod.object({
   id: zod.number(),
@@ -23,6 +24,7 @@ export class ProductService {
   private readonly apiUrl = 'http://localhost:5034/api/Product';
 
   productInput = signal<Partial<Product> | null>(null);
+  selectedProductId = signal<number | null>(null);
 
   query = signal('');
   debouncedQuery = toSignal(
@@ -52,12 +54,6 @@ export class ProductService {
     }
   );
 
-  productValue = computed(() => this.productResource.value() ?? []);
-  productError = computed(() => this.productResource.error() as HttpErrorResponse);
-  productStatus = computed(() => this.productResource.status());
-  productLoading = computed(() => this.productResource.isLoading());
-
-
   addProduct = httpResource(() => {
     const input = this.productInput();
     if (!input) return undefined;
@@ -79,19 +75,47 @@ export class ProductService {
           if (!products) return products;
           return [parsedData, ...products];
         });
+        toast.success('Producto agregado exitosamente');
         this.productInput.set(null);
         return parsedData;
       },
     }
   );
 
+  // updateProduct = httpResource(() => {
+  //   const input = this.productInput();
+  //   if (!input?.id) return undefined; // solo hacer PUT si el producto tiene ID
+
+  //   return {
+  //     url: `${this.apiUrl}/${input.id}`,
+  //     method: 'PUT',
+  //     body: input,
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   };
+  // }, {
+  //   parse: (data) => {
+  //     const updated = SingleProductSchema.parse(data);
+  //     invalidateCacheByUrlFragment('/api/Product');
+
+  //     this.productResource.update((products) => {
+  //       if (!products) return products;
+  //       return products.map(p => p.id === updated.id ? updated : p) ?? [];
+  //     });
+  //     toast.success('Producto actualizado exitosamente');
+  //     this.productInput.set(null);
+  //     return updated;
+  //   }
+  // });
+
   deleteProoduct = httpResource(
     () => {
-      const input = this.productInput();
-      if (!input?.id) return undefined;
+      const id = this.selectedProductId();
+      if (!id) return undefined;
 
       return {
-        url: `${this.apiUrl}/delete/${input.id}`,
+        url: `${this.apiUrl}/delete/${id}`,
         method: 'DELETE',
         headers: {
           accept: 'application/json',
@@ -100,15 +124,14 @@ export class ProductService {
     },
     {
       parse: () => {
-        const input = this.productInput();
+        const inputId = this.selectedProductId();
         invalidateCacheByUrlFragment('/api/Product');
-        if (input?.id != null) {
-          this.productResource.update((products) => {
-            if (!products) return products;
-            return products.filter((p) => p.id !== input.id);
-          });
-          this.productInput.set(null);
-        }
+        this.productResource.update((products) => {
+          if (!products) return products;
+          return products.filter((p) => p.id !== inputId);
+        });
+        this.productInput.set(null);
+        toast.success('Producto eliminado exitosamente');
         return null;
       },
     }
