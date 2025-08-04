@@ -56,7 +56,7 @@ export class ProductService {
 
   addProduct = httpResource(() => {
     const input = this.productInput();
-    if (!input) return undefined;
+    if (!input || input.id !== 0) return undefined;
 
     return {
       url: this.apiUrl,
@@ -82,32 +82,32 @@ export class ProductService {
     }
   );
 
-  // updateProduct = httpResource(() => {
-  //   const input = this.productInput();
-  //   if (!input?.id) return undefined; // solo hacer PUT si el producto tiene ID
+  updateProduct = httpResource(() => {
+    const input = this.productInput();
+    if (!input?.id) return undefined; // solo hacer PUT si el producto tiene ID
 
-  //   return {
-  //     url: `${this.apiUrl}/${input.id}`,
-  //     method: 'PUT',
-  //     body: input,
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   };
-  // }, {
-  //   parse: (data) => {
-  //     const updated = SingleProductSchema.parse(data);
-  //     invalidateCacheByUrlFragment('/api/Product');
+    return {
+      url: `${this.apiUrl}/${input.id}`,
+      method: 'PUT',
+      body: input,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+  }, {
+    parse: (data) => {
+      const updated = SingleProductSchema.parse(data);
+      invalidateCacheByUrlFragment('/api/Product');
 
-  //     this.productResource.update((products) => {
-  //       if (!products) return products;
-  //       return products.map(p => p.id === updated.id ? updated : p) ?? [];
-  //     });
-  //     toast.success('Producto actualizado exitosamente');
-  //     this.productInput.set(null);
-  //     return updated;
-  //   }
-  // });
+      this.productResource.update((products) => {
+        if (!products) return products;
+        return products.map(p => p.id === updated.id ? updated : p) ?? [];
+      });
+      toast.success('Producto actualizado exitosamente');
+      this.productInput.set(null);
+      return updated;
+    }
+  });
 
   deleteProoduct = httpResource(
     () => {

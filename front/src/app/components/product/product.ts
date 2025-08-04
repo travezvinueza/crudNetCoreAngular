@@ -38,7 +38,7 @@ export class Product implements OnInit {
     if (!name || !price) return;
     const payload = { id, name, price };
     this.productService.productInput.set(payload); // Esto dispara automáticamente add o update
-    this.productDetail.reset();
+    this.productDetail.reset({ id: 0, name: '', price: 0 });
   }
 
   // Método para actualizar la query (nombre)

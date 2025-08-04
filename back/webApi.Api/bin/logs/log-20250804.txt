@@ -1,0 +1,854 @@
+2025-08-04 08:25:23.036 -05:00 [INF] Now listening on: http://localhost:5034
+2025-08-04 08:25:23.208 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 08:25:23.214 -05:00 [INF] Hosting environment: Development
+2025-08-04 08:25:23.220 -05:00 [INF] Content root path: C:\Users\RT\Desktop\angular\back\webApi.Api
+2025-08-04 08:26:15.569 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:26:19.620 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:26:19.741 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-04 08:26:20.223 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:26:21.413 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:26:22.407 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:26:38.059 -05:00 [INF] Executed DbCommand (252ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:26:41.148 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:26:42.590 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 21129.7891ms
+2025-08-04 08:26:43.745 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:26:45.820 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 30257.2245ms
+2025-08-04 08:27:02.361 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:27:06.074 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:27:07.367 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 5006.9653ms
+2025-08-04 08:27:09.140 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 50
+2025-08-04 08:27:09.155 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:27:09.166 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:27:09.290 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:27:10.829 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:27:11.832 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:27:14.153 -05:00 [INF] Executed DbCommand (58ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:27:16.309 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:27:16.430 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 5790.2999ms
+2025-08-04 08:27:16.434 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:27:16.437 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 7297.0986ms
+2025-08-04 08:28:15.393 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - null null
+2025-08-04 08:28:19.000 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:28:20.577 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:28:22.022 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:28:23.695 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:28:25.363 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:28:29.909 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:28:34.254 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 10569.2369ms
+2025-08-04 08:28:38.051 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:28:39.164 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - 200 null application/json; charset=utf-8 23771.4133ms
+2025-08-04 08:28:49.808 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/21 - null null
+2025-08-04 08:28:55.900 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:28:57.535 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/21 - 204 null null 7726.7724ms
+2025-08-04 08:29:06.315 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/21 - application/json 51
+2025-08-04 08:29:11.124 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:29:11.837 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:29:12.351 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:29:13.230 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:29:19.126 -05:00 [INF] Executed DbCommand (42ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:29:24.391 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:29:28.187 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 15222.921ms
+2025-08-04 08:29:31.470 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:29:34.836 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/21 - 200 null application/json; charset=utf-8 28521.0954ms
+2025-08-04 08:30:00.847 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/21 - null null
+2025-08-04 08:30:00.853 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:30:00.860 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/21 - 204 null null 12.4997ms
+2025-08-04 08:30:00.899 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/21 - application/json 54
+2025-08-04 08:30:00.905 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:30:00.907 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:30:00.912 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:30:06.854 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:30:17.937 -05:00 [INF] Executed DbCommand (7,601ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:30:19.470 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:30:19.474 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 18556.1732ms
+2025-08-04 08:30:19.514 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:30:19.518 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/21 - 200 null application/json; charset=utf-8 18618.8296ms
+2025-08-04 08:36:13.191 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:36:13.202 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:36:13.252 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:36:13.255 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:36:13.265 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:36:13.388 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:36:13.397 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:36:13.402 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 137.2157ms
+2025-08-04 08:36:13.445 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:36:13.449 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 257.5539ms
+2025-08-04 08:37:31.959 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:37:32.016 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:37:32.340 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 381.3692ms
+2025-08-04 08:37:32.506 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 31
+2025-08-04 08:37:32.525 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:37:32.643 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:37:32.646 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:37:32.652 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:37:32.659 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:37:32.785 -05:00 [INF] Executed DbCommand (31ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:37:32.885 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:37:32.967 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 315.4417ms
+2025-08-04 08:37:33.026 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:37:33.029 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 523.2274ms
+2025-08-04 08:37:46.948 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/22 - null null
+2025-08-04 08:37:47.068 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:37:47.118 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/22 - 204 null null 169.451ms
+2025-08-04 08:37:47.282 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/22 - application/json 37
+2025-08-04 08:37:47.291 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:37:47.292 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:37:47.294 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:37:47.335 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:37:47.461 -05:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:37:47.468 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:37:47.473 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 142.226ms
+2025-08-04 08:37:47.477 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:37:47.502 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/22 - 200 null application/json; charset=utf-8 219.8048ms
+2025-08-04 08:37:57.246 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - null null
+2025-08-04 08:37:57.253 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:37:57.299 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:37:57.302 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:37:57.308 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:37:57.351 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:37:57.364 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:37:57.402 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 94.828ms
+2025-08-04 08:37:57.419 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:37:57.436 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - 200 null application/json; charset=utf-8 190.4638ms
+2025-08-04 08:40:03.897 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:40:03.913 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:40:03.962 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:40:03.967 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:40:03.974 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:40:04.025 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:40:04.072 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:40:04.108 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 135.0796ms
+2025-08-04 08:40:04.152 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:40:04.194 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 296.6491ms
+2025-08-04 08:40:44.193 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:40:44.549 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:40:45.223 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:40:45.635 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:40:45.668 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:40:45.701 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:40:45.765 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:40:45.770 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 103.2629ms
+2025-08-04 08:40:45.817 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:40:45.821 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 1626.447ms
+2025-08-04 08:40:59.037 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:40:59.055 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:40:59.106 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 68.9091ms
+2025-08-04 08:40:59.335 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 33
+2025-08-04 08:40:59.340 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:40:59.344 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:40:59.348 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:40:59.355 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:40:59.429 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:40:59.507 -05:00 [INF] Executed DbCommand (41ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:40:59.515 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:40:59.518 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 165.1128ms
+2025-08-04 08:40:59.558 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:40:59.562 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 227.3984ms
+2025-08-04 08:41:17.844 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/23 - null null
+2025-08-04 08:41:17.870 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:41:17.874 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/23 - 204 null null 29.5331ms
+2025-08-04 08:41:17.997 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/23 - application/json 37
+2025-08-04 08:41:18.194 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:41:18.197 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:41:18.201 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:41:18.238 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:41:18.386 -05:00 [INF] Executed DbCommand (139ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:41:18.406 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:41:18.414 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 209.8292ms
+2025-08-04 08:41:18.441 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:41:18.444 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/23 - 200 null application/json; charset=utf-8 446.6988ms
+2025-08-04 08:42:22.231 -05:00 [INF] Application is shutting down...
+2025-08-04 08:49:01.827 -05:00 [INF] Now listening on: http://localhost:5034
+2025-08-04 08:49:01.964 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 08:49:01.968 -05:00 [INF] Hosting environment: Development
+2025-08-04 08:49:01.979 -05:00 [INF] Content root path: C:\Users\RT\Desktop\angular\back\webApi.Api
+2025-08-04 08:49:04.530 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:49:04.972 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:49:05.133 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-04 08:49:05.146 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:49:05.254 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:49:05.591 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:49:10.935 -05:00 [INF] Executed DbCommand (42ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:49:13.229 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:49:14.504 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 9238.4187ms
+2025-08-04 08:49:15.207 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:49:16.544 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 12019.0633ms
+2025-08-04 08:49:38.905 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - null null
+2025-08-04 08:49:38.960 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:49:38.966 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:49:38.972 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:49:39.015 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:49:39.089 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:49:39.101 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:49:39.132 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 153.2344ms
+2025-08-04 08:49:39.136 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:49:39.146 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - 200 null application/json; charset=utf-8 242.2527ms
+2025-08-04 08:49:51.311 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/23 - null null
+2025-08-04 08:49:51.320 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:49:51.370 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/23 - 204 null null 58.9211ms
+2025-08-04 08:50:00.059 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/23 - null null
+2025-08-04 08:50:00.066 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:00.071 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:00.117 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:00.478 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:50:01.450 -05:00 [INF] Executed DbCommand (909ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 08:50:01.492 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 08:50:01.500 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 1376.8687ms
+2025-08-04 08:50:01.503 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:01.506 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/23 - 204 null null 1447.5435ms
+2025-08-04 08:50:06.723 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/22 - null null
+2025-08-04 08:50:06.728 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:06.732 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/22 - 204 null null 8.818ms
+2025-08-04 08:50:06.786 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/22 - null null
+2025-08-04 08:50:06.843 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:06.846 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:06.881 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:06.902 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:50:11.343 -05:00 [INF] Executed DbCommand (4,380ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 08:50:11.349 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 08:50:11.352 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 4466.9617ms
+2025-08-04 08:50:11.356 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:11.377 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/22 - 204 null null 4590.8361ms
+2025-08-04 08:50:13.991 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/21 - null null
+2025-08-04 08:50:20.088 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:20.098 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/21 - 204 null null 6107.3695ms
+2025-08-04 08:50:20.260 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/21 - null null
+2025-08-04 08:50:20.381 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:20.423 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:20.456 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:20.495 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:50:21.332 -05:00 [INF] Executed DbCommand (718ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 08:50:21.342 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 08:50:21.345 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 884.5873ms
+2025-08-04 08:50:21.458 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 08:50:21.501 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/21 - 204 null null 1240.9003ms
+2025-08-04 08:50:30.964 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:50:30.990 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:30.993 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 29.3198ms
+2025-08-04 08:50:31.099 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 50
+2025-08-04 08:50:31.303 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:31.306 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:50:31.316 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:31.427 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:50:31.480 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:50:32.376 -05:00 [INF] Executed DbCommand (841ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:50:32.383 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:50:32.460 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 1137.2621ms
+2025-08-04 08:50:32.500 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:50:35.545 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 4445.6724ms
+2025-08-04 08:50:42.427 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/24 - null null
+2025-08-04 08:50:42.450 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:42.513 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/24 - 204 null null 85.8339ms
+2025-08-04 08:50:42.562 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/24 - application/json 54
+2025-08-04 08:50:42.570 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:42.573 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:50:42.645 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:42.760 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:50:42.826 -05:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:50:42.833 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:50:42.869 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 142.5278ms
+2025-08-04 08:50:42.936 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:50:42.940 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/24 - 200 null application/json; charset=utf-8 377.6537ms
+2025-08-04 08:50:50.522 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:50:50.543 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:50.548 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 26.3975ms
+2025-08-04 08:50:50.605 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 32
+2025-08-04 08:50:50.611 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:50:50.643 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:50:50.649 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:50:50.658 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:50:50.760 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:50:50.781 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:50:50.814 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:50:50.851 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 194.5839ms
+2025-08-04 08:50:50.883 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:50:50.888 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 282.811ms
+2025-08-04 08:51:05.521 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/25 - null null
+2025-08-04 08:51:05.540 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:51:05.598 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/25 - 204 null null 76.2534ms
+2025-08-04 08:51:05.609 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/25 - application/json 37
+2025-08-04 08:51:05.631 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:51:05.648 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:51:05.652 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:51:05.663 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:51:05.710 -05:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:51:05.722 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:51:05.725 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 68.4249ms
+2025-08-04 08:51:05.750 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:51:05.757 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/25 - 200 null application/json; charset=utf-8 147.8661ms
+2025-08-04 08:54:10.099 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:54:10.107 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:54:10.174 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:54:10.235 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:54:10.529 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:54:10.690 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:54:10.817 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:54:11.181 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 656.8566ms
+2025-08-04 08:54:11.472 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:54:11.475 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 1375.664ms
+2025-08-04 08:54:45.808 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:54:45.814 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:54:45.817 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:54:45.855 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:54:45.866 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:54:45.871 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:54:46.051 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:54:46.064 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 198.4813ms
+2025-08-04 08:54:46.145 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:54:46.156 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 347.6656ms
+2025-08-04 08:55:46.240 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=3&size=10 - null null
+2025-08-04 08:55:47.718 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:55:47.720 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:55:47.724 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:55:47.728 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:55:47.769 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:55:47.777 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:55:47.780 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 52.8488ms
+2025-08-04 08:55:47.830 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:55:47.866 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=3&size=10 - 200 null application/json; charset=utf-8 1626.2614ms
+2025-08-04 08:55:48.692 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - null null
+2025-08-04 08:55:48.703 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:55:48.708 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:55:48.748 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:55:48.756 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:55:48.801 -05:00 [INF] Executed DbCommand (37ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:55:48.817 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:55:48.820 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 65.0327ms
+2025-08-04 08:55:48.858 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:55:48.862 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - 200 null application/json; charset=utf-8 169.5099ms
+2025-08-04 08:56:27.307 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/25 - null null
+2025-08-04 08:56:27.314 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:27.318 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/25 - 204 null null 11.001ms
+2025-08-04 08:56:27.387 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/25 - application/json 37
+2025-08-04 08:56:27.393 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:27.395 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:56:27.437 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:56:27.510 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:56:27.584 -05:00 [INF] Executed DbCommand (25ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:56:27.593 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:56:27.595 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 121.5786ms
+2025-08-04 08:56:27.695 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:56:27.745 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/25 - 200 null application/json; charset=utf-8 358.0349ms
+2025-08-04 08:56:36.129 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:56:36.145 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:36.147 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 18.5976ms
+2025-08-04 08:56:36.206 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 49
+2025-08-04 08:56:36.212 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:36.243 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:56:36.246 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:56:36.253 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:56:36.262 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:56:36.329 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 77.2268ms
+2025-08-04 08:56:36.339 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:56:36.374 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+webApi.Application.Common.CustomExceptions+ConflictException: El producto con nombre 'cliente_request_queue' ya existe.
+   at webApi.Application.Services.ProductService.AddAsync(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Application\Services\ProductService.cs:line 43
+   at webApi.Api.Controllers.ProductController.Create(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Api\Controllers\ProductController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-08-04 08:56:36.479 -05:00 [ERR] Unhandled exception occurred: El producto con nombre 'cliente_request_queue' ya existe.
+webApi.Application.Common.CustomExceptions+ConflictException: El producto con nombre 'cliente_request_queue' ya existe.
+   at webApi.Application.Services.ProductService.AddAsync(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Application\Services\ProductService.cs:line 43
+   at webApi.Api.Controllers.ProductController.Create(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Api\Controllers\ProductController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-08-04 08:56:36.533 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 409 null application/json; charset=utf-8 327.0402ms
+2025-08-04 08:56:49.155 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:56:49.169 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:49.229 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 74.4767ms
+2025-08-04 08:56:49.240 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 31
+2025-08-04 08:56:49.276 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:56:49.278 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:56:49.281 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:56:49.286 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:56:49.313 -05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:56:49.339 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:56:49.352 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:56:49.375 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 89.8904ms
+2025-08-04 08:56:49.384 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:56:49.388 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 147.3255ms
+2025-08-04 08:57:25.474 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:57:25.610 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:25.614 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 139.4581ms
+2025-08-04 08:57:26.232 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 34
+2025-08-04 08:57:26.241 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:26.243 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:57:26.245 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:57:26.326 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:57:26.358 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:57:26.405 -05:00 [INF] Executed DbCommand (40ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:57:26.412 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:57:26.416 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 90.0783ms
+2025-08-04 08:57:26.446 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:57:26.449 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 216.3998ms
+2025-08-04 08:57:31.633 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/27 - null null
+2025-08-04 08:57:31.648 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:31.706 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/27 - 204 null null 72.5271ms
+2025-08-04 08:57:31.745 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/27 - application/json 38
+2025-08-04 08:57:31.751 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:31.753 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:57:31.756 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:57:31.786 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:57:31.825 -05:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:57:31.843 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:57:31.846 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 84.9112ms
+2025-08-04 08:57:31.851 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:57:31.854 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/27 - 200 null application/json; charset=utf-8 109.0153ms
+2025-08-04 08:57:48.289 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 08:57:48.303 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:48.307 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 17.3104ms
+2025-08-04 08:57:48.368 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 36
+2025-08-04 08:57:48.375 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:48.378 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:57:48.410 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:57:48.417 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 08:57:48.424 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 08:57:48.553 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 08:57:48.631 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:57:48.660 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 244.2324ms
+2025-08-04 08:57:48.668 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 08:57:48.670 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 302.1487ms
+2025-08-04 08:57:58.089 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/28 - null null
+2025-08-04 08:57:58.104 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:58.162 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/28 - 204 null null 73.2779ms
+2025-08-04 08:57:58.206 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/28 - application/json 43
+2025-08-04 08:57:58.215 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:57:58.217 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:57:58.263 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:57:58.276 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 08:57:58.325 -05:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 08:57:58.362 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 08:57:58.365 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 93.274ms
+2025-08-04 08:57:58.370 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 08:57:58.373 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/28 - 200 null application/json; charset=utf-8 166.7511ms
+2025-08-04 08:59:07.997 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:59:11.760 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:59:13.022 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:59:15.845 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:59:20.543 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:59:23.041 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:59:28.603 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 08:59:32.505 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:59:37.880 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:59:37.879 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 17337.4728ms
+2025-08-04 08:59:42.137 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:59:42.137 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 08:59:42.514 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 08:59:42.514 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 499 null application/json; charset=utf-8 34516.9097ms
+2025-08-04 08:59:42.599 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 08:59:51.015 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 08:59:52.977 -05:00 [INF] CORS policy execution successful.
+2025-08-04 08:59:52.989 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 08:59:59.724 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 09:00:00.373 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:00:07.472 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:00:10.156 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:00:13.636 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:00:15.412 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 32812.696ms
+2025-08-04 09:00:16.726 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:00:19.676 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:00:19.838 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:00:20.722 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:00:20.731 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 499 null application/json; charset=utf-8 48225.9066ms
+2025-08-04 09:00:23.983 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:00:30.461 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:00:36.520 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:00:36.634 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:00:45.444 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 25769.3984ms
+2025-08-04 09:00:45.465 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:00:51.210 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:00:51.231 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 20770.4945ms
+2025-08-04 09:00:56.909 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 499 null application/json; charset=utf-8 65894.0194ms
+2025-08-04 09:00:57.021 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:01:08.300 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 68576.2088ms
+2025-08-04 09:02:11.495 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 09:02:18.034 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:02:19.939 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:02:22.833 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:02:25.499 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:02:26.822 -05:00 [INF] Executed DbCommand (10ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:02:29.085 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:02:29.758 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 4259.1667ms
+2025-08-04 09:02:29.776 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:02:29.978 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 18482.7997ms
+2025-08-04 09:04:00.155 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 09:04:00.159 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:04:00.164 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:04:00.170 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:04:00.218 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:04:00.226 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:04:00.354 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:04:00.396 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 178.2332ms
+2025-08-04 09:04:00.491 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:04:00.503 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 347.1758ms
+2025-08-04 09:07:44.517 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 09:07:44.523 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:07:44.526 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:07:44.562 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:07:44.568 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:07:44.747 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:07:44.753 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:07:44.757 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 189.5327ms
+2025-08-04 09:07:44.760 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:07:44.763 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 245.8923ms
+2025-08-04 09:09:18.999 -05:00 [INF] Application is shutting down...
+2025-08-04 09:39:16.384 -05:00 [INF] Now listening on: http://localhost:5034
+2025-08-04 09:39:17.181 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-04 09:39:17.683 -05:00 [INF] Hosting environment: Development
+2025-08-04 09:39:18.049 -05:00 [INF] Content root path: C:\Users\RT\Desktop\angular\back\webApi.Api
+2025-08-04 09:39:38.471 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - null null
+2025-08-04 09:39:39.717 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:39:39.817 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-08-04 09:39:40.263 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:39:41.071 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:39:42.799 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:39:49.974 -05:00 [INF] Executed DbCommand (44ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:39:55.406 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:39:58.168 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 15749.1168ms
+2025-08-04 09:39:59.931 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:40:02.826 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=1&size=10 - 200 null application/json; charset=utf-8 24358.865ms
+2025-08-04 09:40:38.583 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - null null
+2025-08-04 09:40:38.631 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:40:38.639 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - 204 null null 56.5011ms
+2025-08-04 09:40:38.651 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/10 - application/json 41
+2025-08-04 09:40:38.685 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:40:38.689 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:40:38.700 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:40:39.091 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:40:39.148 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 09:40:39.173 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 09:40:39.177 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 439.4876ms
+2025-08-04 09:40:39.183 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:40:39.186 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/10 - 200 null application/json; charset=utf-8 535.2012ms
+2025-08-04 09:41:04.401 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - null null
+2025-08-04 09:41:04.409 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:04.454 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - 204 null null 52.2545ms
+2025-08-04 09:41:04.466 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/10 - application/json 41
+2025-08-04 09:41:04.472 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:04.503 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:41:04.572 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:04.872 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:41:04.885 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 09:41:04.891 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 09:41:04.918 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 341.162ms
+2025-08-04 09:41:04.924 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:41:04.940 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/10 - 200 null application/json; charset=utf-8 474.0511ms
+2025-08-04 09:41:30.179 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - null null
+2025-08-04 09:41:30.186 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:30.223 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/10 - 204 null null 44.3642ms
+2025-08-04 09:41:30.235 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/10 - application/json 41
+2025-08-04 09:41:30.271 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:30.275 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:41:30.280 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:30.323 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:41:30.377 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 09:41:30.400 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 09:41:30.405 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 106.5061ms
+2025-08-04 09:41:30.408 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:41:30.412 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/10 - 200 null application/json; charset=utf-8 176.5972ms
+2025-08-04 09:41:34.338 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - null null
+2025-08-04 09:41:34.348 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:34.392 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:41:34.396 -05:00 [INF] Route matched with {action = "GetAll", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, Int32, Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:34.440 -05:00 [INF] 🧪 Consultando productos paginados
+2025-08-04 09:41:34.449 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Int32), p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL ListarProductos(@p0, @p1, @p2)
+2025-08-04 09:41:34.486 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[webApi.Application.Dtos.ProductDto, webApi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-04 09:41:34.491 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.GetAll (webApi.Api) in 51.3498ms
+2025-08-04 09:41:34.532 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.GetAll (webApi.Api)'
+2025-08-04 09:41:34.534 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5034/api/Product?nombre=&page=2&size=10 - 200 null application/json; charset=utf-8 195.9859ms
+2025-08-04 09:41:37.150 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/26 - null null
+2025-08-04 09:41:37.170 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:37.262 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/26 - 204 null null 111.1618ms
+2025-08-04 09:41:37.277 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/26 - null null
+2025-08-04 09:41:37.425 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:37.838 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:38.354 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:38.402 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:41:38.449 -05:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 09:41:38.494 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 09:41:38.497 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 133.6505ms
+2025-08-04 09:41:38.501 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:38.528 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/26 - 204 null null 1251.0717ms
+2025-08-04 09:41:43.781 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/25 - null null
+2025-08-04 09:41:43.789 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:43.829 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/25 - 204 null null 47.491ms
+2025-08-04 09:41:43.872 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/25 - null null
+2025-08-04 09:41:43.878 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:43.907 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:43.910 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:43.918 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:41:43.967 -05:00 [INF] Executed DbCommand (43ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 09:41:43.980 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 09:41:44.002 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 88.7578ms
+2025-08-04 09:41:44.038 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:44.107 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/25 - 204 null null 234.5809ms
+2025-08-04 09:41:49.727 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/24 - null null
+2025-08-04 09:41:49.733 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:49.767 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/delete/24 - 204 null null 40.5126ms
+2025-08-04 09:41:49.814 -05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/24 - null null
+2025-08-04 09:41:49.822 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:41:49.826 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:49.829 -05:00 [INF] Route matched with {action = "Delete", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:41:49.882 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:41:49.931 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+CALL EliminarProducto(@p0)
+2025-08-04 09:41:49.987 -05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-08-04 09:41:49.989 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Delete (webApi.Api) in 111.5238ms
+2025-08-04 09:41:49.994 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Delete (webApi.Api)'
+2025-08-04 09:41:50.036 -05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5034/api/Product/delete/24 - 204 null null 222.0909ms
+2025-08-04 09:42:04.975 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 09:42:04.986 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:05.023 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 47.1434ms
+2025-08-04 09:42:05.055 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 36
+2025-08-04 09:42:05.088 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:05.091 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 09:42:05.161 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:42:05.168 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 09:42:05.220 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 09:42:05.281 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[p0='?' (Size = 4000), p1='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL AgregarProducto(@p0, @p1)
+2025-08-04 09:42:05.314 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 09:42:05.354 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 188.504ms
+2025-08-04 09:42:05.384 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 09:42:05.388 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 201 null application/json; charset=utf-8 332.095ms
+2025-08-04 09:42:22.463 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product/29 - null null
+2025-08-04 09:42:22.471 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:22.480 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product/29 - 204 null null 17.319ms
+2025-08-04 09:42:22.523 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5034/api/Product/29 - application/json 40
+2025-08-04 09:42:22.559 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:22.565 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:42:22.567 -05:00 [INF] Route matched with {action = "Update", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:42:22.578 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Id` = @__p_0
+LIMIT 1
+2025-08-04 09:42:22.652 -05:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+CALL ActualizarProducto(@p0, @p1, @p2)
+2025-08-04 09:42:22.660 -05:00 [INF] Executing OkObjectResult, writing value of type 'webApi.Application.Dtos.ProductDto'.
+2025-08-04 09:42:22.664 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Update (webApi.Api) in 92.4553ms
+2025-08-04 09:42:22.687 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Update (webApi.Api)'
+2025-08-04 09:42:22.691 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5034/api/Product/29 - 200 null application/json; charset=utf-8 168.6298ms
+2025-08-04 09:42:55.630 -05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5034/api/Product - null null
+2025-08-04 09:42:55.680 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:55.780 -05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5034/api/Product - 204 null null 150.0526ms
+2025-08-04 09:42:55.878 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5034/api/Product - application/json 34
+2025-08-04 09:42:55.915 -05:00 [INF] CORS policy execution successful.
+2025-08-04 09:42:55.917 -05:00 [INF] Executing endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 09:42:55.920 -05:00 [INF] Route matched with {action = "Create", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(webApi.Application.Dtos.ProductDto) on controller webApi.Api.Controllers.ProductController (webApi.Api).
+2025-08-04 09:42:56.039 -05:00 [INF] 🧪 Creando un nuevo producto
+2025-08-04 09:42:56.092 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__name_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT `p`.`Id`, `p`.`Name`, `p`.`Price`
+FROM `Products` AS `p`
+WHERE `p`.`Name` = @__name_0
+LIMIT 1
+2025-08-04 09:42:56.132 -05:00 [INF] Executed action webApi.Api.Controllers.ProductController.Create (webApi.Api) in 94.2051ms
+2025-08-04 09:42:56.136 -05:00 [INF] Executed endpoint 'webApi.Api.Controllers.ProductController.Create (webApi.Api)'
+2025-08-04 09:42:56.141 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+webApi.Application.Common.CustomExceptions+ConflictException: El producto con nombre 'iphone' ya existe.
+   at webApi.Application.Services.ProductService.AddAsync(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Application\Services\ProductService.cs:line 43
+   at webApi.Api.Controllers.ProductController.Create(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Api\Controllers\ProductController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-08-04 09:42:56.266 -05:00 [ERR] Unhandled exception occurred: El producto con nombre 'iphone' ya existe.
+webApi.Application.Common.CustomExceptions+ConflictException: El producto con nombre 'iphone' ya existe.
+   at webApi.Application.Services.ProductService.AddAsync(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Application\Services\ProductService.cs:line 43
+   at webApi.Api.Controllers.ProductController.Create(ProductDto dto) in C:\Users\RT\Desktop\angular\back\webApi.Api\Controllers\ProductController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-08-04 09:42:56.507 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5034/api/Product - 409 null application/json; charset=utf-8 629.5029ms
+2025-08-04 09:43:38.467 -05:00 [INF] Application is shutting down...
