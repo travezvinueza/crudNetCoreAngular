@@ -98,7 +98,6 @@ export class ProductService {
     parse: (data) => {
       const updated = SingleProductSchema.parse(data);
       invalidateCacheByUrlFragment('/api/Product');
-
       this.productResource.update((products) => {
         if (!products) return products;
         return products.map(p => p.id === updated.id ? updated : p) ?? [];
@@ -131,7 +130,6 @@ export class ProductService {
           return products.filter((p) => p.id !== inputId);
         });
         this.productInput.set(null);
-        toast.success('Producto eliminado exitosamente');
         return null;
       },
     }

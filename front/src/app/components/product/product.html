@@ -14,7 +14,7 @@
   </select>
 </div>
 
-<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModalProduct">
+<button class="btn btn-primary" type="button" (click)="openAddModal()">
   <i class="fa fa-plus"></i> Agregar Producto
 </button>
 
@@ -46,7 +46,7 @@
         <button class="btn btn-dark btn-sm" (click)="deleteProduct(product.id)">
           ❌ Delete
         </button>
-        <button class="btn btn-info btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#editModalProduct"
+        <button class="btn btn-info btn-sm" type="button" 
           (click)="editProduct(product.id)">
           📝 Edit
         </button>
@@ -62,66 +62,33 @@
 }
 
 
-<div class="modal fade" id="addModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
   <div class="modal-dialog draggable modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-info text-center">
-        <h4 class="modal-title w-100 text-white" id="exampleModalLabel">Add Product</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title w-100 text-white" id="productModalLabel">
+          {{ isEditing ? 'Editar Producto' : 'Agregar Producto' }}
+        </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="productDetail">
+        <form [formGroup]="productDetailForm">
+          <input type="hidden" formControlName="id">
           <div class="mb-3">
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nombre del producto"
-              required>
+            <input type="text" formControlName="name" class="form-control" placeholder="Nombre del producto" required>
           </div>
-
           <div class="mb-3">
-            <input type="number" formControlName="price" class="form-control" id="price" placeholder="Precio" required>
-          </div>
-
-          <br>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"> <i
-                class="fa fa-times-circle"></i>Cancelar</button>
-            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal" (click)="saveProduct()"><i
-                class="fa fa-save"></i>Agregar </button>
+            <input type="number" formControlName="price" class="form-control" placeholder="Precio" required>
           </div>
         </form>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="modal fade" id="editModalProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog draggable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-info text-center">
-        <h4 class="modal-title w-100 text-white" id="exampleModalLabel">Edit Product</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <form [formGroup]="productDetail">
-          <input type="hidden" formControlName="id" class="form-control" id="id">
-          <div class="mb-3">
-            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nombre del producto"
-              required>
-          </div>
-
-          <div class="mb-3">
-            <input type="number" formControlName="price" class="form-control" id="price" placeholder="Precio" required>
-          </div>
-
-          <br>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"> <i
-                class="fa fa-times-circle"></i>Cancelar</button>
-            <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal" (click)="saveProduct()"><i
-                class="fa fa-save"></i>Actualizar </button>
-          </div>
-        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+          <i class="fa fa-times-circle"></i> Cancelar
+        </button>
+        <button type="button" class="btn btn-success btn-sm" (click)="saveProduct()" data-bs-dismiss="modal">
+          <i class="fa fa-save"></i> {{ isEditing ? 'Actualizar' : 'Agregar' }}
+        </button>
       </div>
     </div>
   </div>
